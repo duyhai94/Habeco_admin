@@ -1,0 +1,49 @@
+<div *ngIf="data.type === 'card'" class="detail-card">
+    <div class="title-card">
+        {{data?.title}}
+    </div>
+    <div class="row content">
+        <div *ngFor="let i of data.data" [class]="i.class" class="d-flex mb-2">
+            <div class="title-data">
+                {{i.name}}:
+            </div>
+            {{i.value}}
+        </div>
+    </div>
+</div>
+<br>
+<div *ngIf="data.type === 'table'" class="detail-card">
+    <div class="title-card">
+        {{data?.title}}
+    </div>
+    <table class="table-card-base">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let item of data.listTh" [style.min-width.px]="item.width">
+                    {{ item.name }}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data.data; let i = index">
+                <td *ngFor="let i of data.listTh">
+                    <span *ngIf="i.type === 'number'">{{ item[i.id] | number }}</span>
+                    <span *ngIf="i.type === 'text'">{{ item[i.id] }}</span>
+                    <span *ngIf="i.type === 'object'">{{ item[i.id][i.idSub] }}</span>
+                    <span *ngIf="i.type === 'date'">
+                        <!-- {{ item[i.id] | date: "dd-MM-YYYY" }} -->
+                        {{ item[i.id] }}
+                    </span>
+                    <span *ngIf="i.type === 'setting'">
+                        <button (click)="onClickSetting(item, 'edit')" class="btn mbf-btn-active">
+                            Sửa
+                        </button>
+                        <button (click)="onClickSetting(item, 'delete')" class="btn mbf-btn-create ml-2">
+                            Xóa
+                        </button>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

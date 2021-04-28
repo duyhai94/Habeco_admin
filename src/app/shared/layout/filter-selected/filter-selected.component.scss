@@ -1,0 +1,15 @@
+.filter-selected {
+    width: 100%;
+    background-color: azure;
+    display: flex;
+    height: 70px;
+    .item {
+        align-self: center;
+        padding: 10px;
+        text-align: center;
+    }
+    .active {
+        color: #00a050;
+        border-bottom: 2px solid #00a050;
+    }
+}

@@ -1,0 +1,25 @@
+<div class="detail-maintenance-page shadow">
+    <div class="d-flex">
+        <div class="title">
+            PHIẾU BẢO HÀNH
+        </div>
+        <div class="value">
+            12345678
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-7">
+            <app-card-detail [data]="detailGoods"></app-card-detail>
+            <app-card-detail [data]="detailComponentsUsed"></app-card-detail>
+        </div>
+        <div class="col-5">
+            <app-card-detail [data]="detailInfo"></app-card-detail>
+        </div>
+        <div class="col-12">
+            <app-card-detail [data]="detailHistory"></app-card-detail>
+        </div>
+        <div class="col-7">
+            <app-card-detail [data]="MaintenanceHistory"></app-card-detail>
+        </div>
+    </div>
+</div>

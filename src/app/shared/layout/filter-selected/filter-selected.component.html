@@ -1,0 +1,6 @@
+<div class="filter-selected shadow">
+    <div class="item" [style.width]="width" *ngFor="let i of listFilter; let ix = index"
+        (click)="onChangeValueSelected(i,ix)" [class.active]="isActive === ix">
+        {{i?.Name}} ({{i?.length || 0}})
+    </div>
+</div>
