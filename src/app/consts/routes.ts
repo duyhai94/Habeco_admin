@@ -19,38 +19,35 @@ export const RoutesLink = [
     subs: [],
   },
   {
-    name: 'Quản lý tài sản',
-    icon: 'assets/svg/house.svg',
+    name: 'Xuất nhập kho',
+    icon: 'assets/svg/warehouse.png',
     subs: [
-      { name: 'Danh sách linh kiện', path: Routes.ACCESSORIES },
-      { name: 'Danh sách hàng hóa', path: Routes.GOODS },
-      { name: 'Danh sách thiết bị', path: Routes.DEVICE }
+      { name: 'Nhập kho', path: Routes.ACCESSORIES },
+      { name: 'Xuất kho', path: Routes.GOODS },
+    ],
+  },
+  {
+    name: 'Chiết nạp',
+    icon: 'assets/svg/output.png',
+    subs: [
     ],
   },
   {
     name: 'Bảo dưỡng',
-    icon: 'assets/svg/global-settings.svg',
+    icon: 'assets/svg/global-settings.png',
     subs: [
-      { name: 'Quản lý danh sách bảo dưỡng', path: Routes.MAINTENANCE },
-      { name: 'Quản lý địa điểm bảo dưỡng', path: Routes.SITE },
-      { name: 'Lý do bảo dưỡng', path: Routes.REASON }
-    ],
-  },
-  {
-    name: 'Kho hàng',
-    icon: 'assets/svg/warehouse.svg',
-    subs: [
-      { name: 'Quản lý xuất nhập kho', path: '' },
-      { name: 'Xuất nhập kho linh kiện', path: '' },
-      { name: 'Xuất nhập kho hàng hóa', path: '' },
-      { name: 'Xuất nhập kho thiết bị', path: '' },
-      { name: 'Lịch sử xuất nhập kho', path: '' }
+      { name: 'Nhập bao dưỡng', path: '' },
+      { name: 'Chờ bảo dưỡng', path: '' },
+      { name: 'Đang bảo dưỡng', path: '' },
+      { name: 'Đang chờ linh kiện', path: '' },
+      { name: 'Bảo dưỡng xong', path: '' },
+      { name: 'Bảo dưỡng thất bại', path: '' }
     ],
   },
   {
     path: Routes.REPORT,
     name: 'Báo cáo',
-    icon: 'assets/svg/report.svg',
+    icon: 'assets/svg/report.png',
     subs: [],
   },
   {
