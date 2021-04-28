@@ -186,11 +186,11 @@ export class MaintenanceModel {
                 text: 'Thêm mới',
                 type: 'create',
             },
-            {
-                class: 'mbf-btn-active',
-                text: 'Thao tác',
-                type: 'active',
-            }
+            // {
+            //     class: 'mbf-btn-active',
+            //     text: 'Thao tác',
+            //     type: 'active',
+            // }
         ];
     }
 }
