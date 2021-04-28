@@ -11,18 +11,18 @@ export class MaintenanceModel {
     Date: string;
     public get collums(): Array<CollumsModel> {
         return [
-            {
-                id: 'id',
-                name: 'ID',
-                width: 100,
-                type: 'text'
-            },
-            {
-                id: 'hang_hoa',
-                name: 'Hàng hóa',
-                width: 100,
-                type: 'text'
-            },
+            // {
+            //     id: 'id',
+            //     name: 'ID',
+            //     width: 100,
+            //     type: 'text'
+            // },
+            // {
+            //     id: 'hang_hoa',
+            //     name: 'Hàng hóa',
+            //     width: 100,
+            //     type: 'text'
+            // },
             {
                 id: 'serial',
                 name: 'Serial',
@@ -31,7 +31,7 @@ export class MaintenanceModel {
             },
             {
                 id: 'date_baoduong',
-                name: 'Ngày gần nhất bảo dưỡng',
+                name: 'Ngày bảo dưỡng gần nhất',
                 width: 200,
                 type: 'date',
             },
@@ -41,15 +41,15 @@ export class MaintenanceModel {
                 width: 200,
                 type: 'date',
             },
-            {
-                id: 'trang_thai',
-                name: 'Trạng thái',
-                width: 200,
-                type: 'text',
-            },
+            // {
+            //     id: 'trang_thai',
+            //     name: 'Trạng thái',
+            //     width: 200,
+            //     type: 'text',
+            // },
             {
                 id: 'nguoi_sua',
-                name: 'Người sửa',
+                name: 'Người bảo dưỡng',
                 width: 200,
                 type: 'text',
             },
@@ -131,23 +131,17 @@ export class MaintenanceModel {
                 data: [],
                 condition: 'id'
             },
-            {
-                Text: 'ID',
-                type: 'text',
-                data: [],
-                condition: 'id'
-            },
+            // {
+            //     Text: 'ID',
+            //     type: 'text',
+            //     data: [],
+            //     condition: 'id'
+            // },
             {
                 Text: 'Serial',
                 type: 'text',
                 data: [],
                 condition: 'serial'
-            },
-            {
-                Text: 'Người sửa',
-                type: 'text',
-                data: [],
-                condition: 'nguoi_sua'
             },
             {
                 Text: 'Ngày tiếp nhận',
@@ -160,6 +154,24 @@ export class MaintenanceModel {
                 type: 'date',
                 data: [],
                 condition: 'dateFilter_dukien'
+            },
+            {
+                Text: 'Linh kiện',
+                type: 'text',
+                data: [],
+                condition: 'nguoi_sua'
+            },
+            {
+                Text: 'Người tạo phiếu',
+                type: 'text',
+                data: [],
+                condition: 'nguoi_sua'
+            },
+            {
+                Text: 'Người bảo dưỡng',
+                type: 'text',
+                data: [],
+                condition: 'nguoi_sua'
             },
             {
                 Text: '',
