@@ -17,8 +17,6 @@ import { DetailMaintenanceComponent } from './detail-maintenance.component';
     template: `<app-filter [(listFilter)]="listFilter" (callback)="handleCallback($event)">
             </app-filter>
               <br />
-            <app-filter-selected [listFilter]="filterSelected" (callback)="handleCallbackfilterSelected($event)"></app-filter-selected>
-              <br/>
             <app-table [(data)]="dataSub" [(listlable)]="listlable" [(listActive)]="listActive"
                 (callback)="handleCallbackSettingTable($event)">
             </app-table>`

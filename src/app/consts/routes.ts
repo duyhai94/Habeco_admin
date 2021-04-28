@@ -31,9 +31,12 @@ export const RoutesLink = [
     name: 'Bảo dưỡng',
     icon: 'assets/svg/global-settings.svg',
     subs: [
-      { name: 'Quản lý danh sách bảo dưỡng', path: Routes.MAINTENANCE },
-      { name: 'Quản lý địa điểm bảo dưỡng', path: Routes.SITE },
-      { name: 'Lý do bảo dưỡng', path: Routes.REASON }
+      { name: 'Nhập bảo dưỡng', path: Routes.MAINTENANCE },
+      { name: 'Chờ bảo dưỡng', path: Routes.SITE },
+      { name: 'Đang bảo duõng', path: Routes.REASON },
+      { name: 'Đang chờ linh kiện', path: Routes.REASON },
+      { name: 'Bảo dưỡng xong', path: Routes.REASON },
+      { name: 'Bảo dưỡng thất bại', path: Routes.REASON }
     ],
   },
   {

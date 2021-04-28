@@ -126,6 +126,12 @@ export class MaintenanceModel {
     public get filter(): Array<FilterModel> {
         return [
             {
+                Text: 'Đơn vị xử lý',
+                type: 'text',
+                data: [],
+                condition: 'id'
+            },
+            {
                 Text: 'ID',
                 type: 'text',
                 data: [],
