@@ -22,11 +22,14 @@ const routes: Routes = [
                     import('./asset/asset.module').then((m) => m.AssetHomeModule),
             },
             {
+                path: 'setting',
+                loadChildren: () => import('./setting/setting.module').then((m)=> m.SettingModule)
+            },
+            {
                 path: '',
                 redirectTo: 'home',
                 pathMatch: 'full',
             }
-
         ],
     },
 ];

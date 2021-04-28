@@ -36,7 +36,7 @@ export const RoutesLink = [
     name: 'Bảo dưỡng',
     icon: 'assets/svg/global-settings.png',
     subs: [
-      { name: 'Nhập bao dưỡng', path: '' },
+      { name: 'Nhập bảo dưỡng', path: '' },
       { name: 'Chờ bảo dưỡng', path: '' },
       { name: 'Đang bảo dưỡng', path: '' },
       { name: 'Đang chờ linh kiện', path: '' },
@@ -51,11 +51,11 @@ export const RoutesLink = [
     subs: [],
   },
   {
-    path: Routes.SETTING,
+    path: '',
     name: 'Cài đặt',
     icon: 'assets/svg/setting.svg',
     subs: [
-      { name: 'Cơ cấu công ty', path: '' },
+      { name: 'Cơ cấu công ty', path: Routes.SETTING },
       { name: 'Nhóm người dùng', path: '' },
       { name: 'Phân quyền người dùng', path: '' }
     ],

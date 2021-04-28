@@ -5,16 +5,18 @@ import { SidebarModule } from '../shared/layout/sidebar/sidebar.component';
 import { UserProfileBaseModule } from '../shared/layout/user-profile/user-profile.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { PagesComponent } from './pages.component';
+import { SettingModule } from './setting/setting.module';
 
 @NgModule({
     declarations: [
-        PagesComponent
+        PagesComponent,
     ],
     imports: [
         PagesRoutingModule,
         FilterBaseModule,
         SidebarModule,
-        UserProfileBaseModule
+        UserProfileBaseModule,
+        SettingModule
     ],
     providers: [],
     exports: [
