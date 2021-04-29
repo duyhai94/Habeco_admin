@@ -51,13 +51,13 @@ export const RoutesLink = [
     subs: [],
   },
   {
-    path: '',
+    path: '/pages/setting',
     name: 'Cài đặt',
     icon: 'assets/svg/setting.svg',
     subs: [
-      { name: 'Cơ cấu công ty', path: Routes.SETTING },
-      { name: 'Nhóm người dùng', path: '' },
-      { name: 'Phân quyền người dùng', path: '' }
+      { name: 'Cơ cấu công ty', path: '/pages/setting/structure' },
+      { name: 'Nhóm người dùng', path: '/pages/setting/group' },
+      { name: 'Phân quyền người dùng', path: '/pages/setting/permission' }
     ],
   },
 ];

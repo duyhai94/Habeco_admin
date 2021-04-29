@@ -1,11 +1,21 @@
-.shadow{
+.shadow {
     box-shadow: 0 0 3px 1px rgb(128 128 128 / 30%);
     border-radius: 20px;
     background-color: $color-white;
 }
-.shadow-half{
+
+.shadow-half {
     box-shadow: 0 0 3px 1px rgb(128 128 128 / 30%);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     background-color: $color-white;
+}
+
+.btn-add {
+    border: 1px solid #00A050;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #00A050;
+    width: 150px;
+    height: 40px;
 }
