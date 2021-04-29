@@ -38,11 +38,11 @@ export const RoutesLink = [
     icon: 'assets/svg/global-settings.png',
     subs: [
       { name: 'Nhập bảo dưỡng', path: Routes.MAINTENANCE },
-      { name: 'Chờ bảo dưỡng', path: Routes.SITE },
-      { name: 'Đang bảo duõng', path: Routes.REASON },
-      { name: 'Đang chờ linh kiện', path: Routes.REASON },
-      { name: 'Bảo dưỡng xong', path: Routes.REASON },
-      { name: 'Bảo dưỡng thất bại', path: Routes.REASON }
+      { name: 'Chờ bảo dưỡng', path: Routes.MAINTENANCE },
+      { name: 'Đang bảo duõng', path: Routes.MAINTENANCE },
+      { name: 'Đang chờ linh kiện', path: Routes.MAINTENANCE },
+      { name: 'Bảo dưỡng xong', path: Routes.MAINTENANCE },
+      { name: 'Bảo dưỡng thất bại', path: Routes.MAINTENANCE }
     ],
   },
   {

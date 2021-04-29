@@ -6,12 +6,17 @@
     .listFilter {
         display: flex;
         position: relative;
+        flex-wrap: nowrap;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
         .search {
             position: absolute;
             right: 0;
-            ::placeholder {
+             ::placeholder {
                 color: white;
             }
+            width: 15%;
             .search-input {
                 position: relative;
                 img {
@@ -24,7 +29,7 @@
         .filter-text {
             width: 85%;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         }
         .item-filter {
             margin-bottom: 20px;
