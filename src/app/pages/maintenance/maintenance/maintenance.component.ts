@@ -59,10 +59,13 @@ export class MaintenanceComponent implements OnInit {
             this.loadService.show();
         }
         this.maintenanceService.list().subscribe(res => {
+            console.log('data', res);
             this.filterSelected.forEach(x => {
                 x.length = res.filter(a => a.trang_thai === x.Name).length;
             });
             this.dataSub = res.map(x => {
+
+
                 return {
                     id: x.id,
                     hang_hoa: x.hang_hoa,
