@@ -98,7 +98,7 @@ export class MaintenanceComponent implements OnInit {
                     }
                 });
             }
-        }
+        }   
 
         if (!this.value) {
             if (!filter.length) return this.dataSub = this.data;

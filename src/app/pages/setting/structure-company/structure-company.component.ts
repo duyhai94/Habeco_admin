@@ -10,7 +10,8 @@ import { LoaderService } from 'src/app/shared/services/loader.service';
   selector: 'app-structure-company',
   template: `<app-filter [listFilter]="listFilter"></app-filter>
             <br />
-            <app-table [listlable]="listlable" [data]="data" [listActive]="listActive"></app-table>`,
+            <app-table  [(data)]="data" [(listlable)]="listlable" [(listActive)]="listActive"
+                (callback)="handleCallbackSettingTable($event)"></app-table>`,
 })
 export class StructureCompanyComponent implements OnInit {
   listFilter;
@@ -62,34 +63,12 @@ export class StructureCompanyComponent implements OnInit {
         this.listFilter = this.conFig.filter;
         this.listActive = this.conFig.btnActice;
   }
-  onLoadData = (isLoading?) => {
-    if (isLoading) {
-        this.loadService.show();
-    }
-    this.maintenanceService.list().subscribe(res => {
-        console.log('data', res);
-        this.filterSelected.forEach(x => {
-            x.length = res.filter(a => a.trang_thai === x.Name).length;
-        });
-        this.dataSub = res.map(x => {
+  onLoadData(){
+  }
 
-
-            return {
-                id: x.id,
-                hang_hoa: x.hang_hoa,
-                serial: x.serial,
-                date_baoduong: x.date_baoduong,
-                dateFilter_baoduong: this.dateService.formatDate(x.date_baoduong, 'MM-DD-YYYY'),
-                date_dukien: x.date_dukien,
-                dateFilter_dukien: this.dateService.formatDate(x.date_dukien, 'MM-DD-YYYY'),
-                trang_thai: x.trang_thai,
-                nguoi_sua: x.nguoi_sua,
-                fullText: x.id + '-' + x.serial + '-' + x.hang_hoa
-            }
-        });
-        this.dataSub.reverse();
-        this.data = this.dataSub;
-    }, () => { }, () => { this.loadService.hide(); })
+handleCallbackSettingTable(ev){
+  console.log(ev);
+  
 }
 
 }
