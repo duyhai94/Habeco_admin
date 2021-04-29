@@ -30,18 +30,19 @@ export const RoutesLink = [
     name: 'Chiết nạp',
     icon: 'assets/svg/output.png',
     subs: [
+
     ],
   },
   {
     name: 'Bảo dưỡng',
     icon: 'assets/svg/global-settings.png',
     subs: [
-      { name: 'Nhập bảo dưỡng', path: '' },
-      { name: 'Chờ bảo dưỡng', path: '' },
-      { name: 'Đang bảo dưỡng', path: '' },
-      { name: 'Đang chờ linh kiện', path: '' },
-      { name: 'Bảo dưỡng xong', path: '' },
-      { name: 'Bảo dưỡng thất bại', path: '' }
+      { name: 'Nhập bảo dưỡng', path: Routes.MAINTENANCE },
+      { name: 'Chờ bảo dưỡng', path: Routes.SITE },
+      { name: 'Đang bảo duõng', path: Routes.REASON },
+      { name: 'Đang chờ linh kiện', path: Routes.REASON },
+      { name: 'Bảo dưỡng xong', path: Routes.REASON },
+      { name: 'Bảo dưỡng thất bại', path: Routes.REASON }
     ],
   },
   {

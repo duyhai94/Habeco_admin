@@ -17,8 +17,6 @@ import { DetailMaintenanceComponent } from './detail-maintenance.component';
     template: `<app-filter [(listFilter)]="listFilter" (callback)="handleCallback($event)">
             </app-filter>
               <br />
-            <app-filter-selected [listFilter]="filterSelected" (callback)="handleCallbackfilterSelected($event)"></app-filter-selected>
-              <br/>
             <app-table [(data)]="dataSub" [(listlable)]="listlable" [(listActive)]="listActive"
                 (callback)="handleCallbackSettingTable($event)">
             </app-table>`
@@ -26,7 +24,7 @@ import { DetailMaintenanceComponent } from './detail-maintenance.component';
 export class MaintenanceComponent implements OnInit {
     constructor(
         private dialog: MatDialog,
-        private service: MaintenanceService,
+        private maintenanceService: MaintenanceService,
         private loadService: LoaderService,
         private dateService: FormatDateService,
         private router: Router
@@ -60,11 +58,14 @@ export class MaintenanceComponent implements OnInit {
         if (isLoading) {
             this.loadService.show();
         }
-        this.service.list().subscribe(res => {
+        this.maintenanceService.list().subscribe(res => {
+            console.log('data', res);
             this.filterSelected.forEach(x => {
                 x.length = res.filter(a => a.trang_thai === x.Name).length;
             });
             this.dataSub = res.map(x => {
+
+
                 return {
                     id: x.id,
                     hang_hoa: x.hang_hoa,
@@ -139,7 +140,7 @@ export class MaintenanceComponent implements OnInit {
                 });
                 break;
             case 'delete':
-                this.service.delete(value.item.id).subscribe(res => {
+                this.maintenanceService.delete(value.item.id).subscribe(res => {
                     this.dataSub = this.dataSub.filter(x => x.id != value.item.id);
                 })
                 break;
