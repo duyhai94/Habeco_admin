@@ -1,92 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { SettingStrutureModel } from 'src/app/common/model/setting-structure.model';
+import { MaintenanceService } from 'src/app/common/service/maintenance.service';
+import { FormatDateService } from 'src/app/shared/services/format-date.service';
+import { LoaderService } from 'src/app/shared/services/loader.service';
 
 @Component({
   selector: 'app-structure-company',
-  templateUrl: './structure-company.component.html',
-  styleUrls: ['./structure-company.component.scss']
+  template: `<app-filter [listFilter]="listFilter"></app-filter>
+            <br />
+            <app-table [listlable]="listlable" [data]="data" [listActive]="listActive"></app-table>`,
 })
 export class StructureCompanyComponent implements OnInit {
-  listFilter = [
-    {
-      type: 'selected',
-      Text: 'Đơn vị xử lý',
-      data: {}
-    },
-    {
-      type: 'text',
-      Text: 'ID',
-      data: {}
-    },
-    {
-      type: 'date',
-      Text: 'Ngày tiếp nhận',
-      data: {}
-    },
-    {
-      type: 'date',
-      Text: 'Ngày đến hạn',
-      data: {}
-    },
-    {
-      type: 'text',
-      Text: 'Linh kiện',
-      data: {}
-    },
-    {
-      type: 'text',
-      Text: 'Ngươi tạo',
-      data: {}
-    },
-    {
-      type: 'text',
-      Text: 'Ngươi sửa',
-      data: {}
-    },
-    {
-      type: 'search',
-    }
-  ]
-
-  listlable = [
-    {
-      name: 'Serial',
-      width: 200,
-      type: 'text',
-      id: 'serial',
-    },
-    {
-      name: 'Ngày bảo dưỡng gần nhất',
-      width: 300,
-      type: 'date',
-      id: 'lastest'
-    },
-    {
-      name: 'Ngày xong dự kiến',
-      width: 300,
-      type: 'date',
-      id: 'expected'
-    },
-    {
-      name: 'Người sửa',
-      width: 300,
-      type: 'text',
-      id: 'repairer'
-    },
-    {
-      name: '',
-      width: 200,
-      type: 'setting',
-    }
-  ]
-
-  listActive = [
-    {
-      text: 'Thêm mới',
-      class: 'btn-outline-success btn-add'
-    }
-  ]
-
-
+  listFilter;
+  listlable;
+  dataSub = [];
+  listActive;
+  value: string;
   data = [
     {
       serial : '129738322',
@@ -110,9 +41,55 @@ export class StructureCompanyComponent implements OnInit {
 
     }
   ]
-  constructor() { }
+  constructor( 
+    private maintenanceService: MaintenanceService,
+    private loadService: LoaderService,
+    private dateService: FormatDateService,) { }
+
+  conFig = new SettingStrutureModel;
+  filterSelected: any = [
+    { value: 'Mới', Name: 'Mới' },
+    { value: 'Đã xác nhận', Name: 'Đã xác nhận' },
+    { value: 'Đang bảo dưỡng', Name: 'Đang bảo dưỡng' },
+    { value: 'Đang chờ linh kiện', Name: 'Đang chờ linh kiện' },
+    { value: 'Bảo dưỡng xong', Name: 'Bảo dưỡng xong' },
+    { value: 'Bảo dưỡng thất bại', Name: 'Bảo dưỡng thất bại' }
+]
 
   ngOnInit(): void {
+        // this.onLoadData(true);
+        this.listlable = this.conFig.collums;
+        this.listFilter = this.conFig.filter;
+        this.listActive = this.conFig.btnActice;
   }
+  onLoadData = (isLoading?) => {
+    if (isLoading) {
+        this.loadService.show();
+    }
+    this.maintenanceService.list().subscribe(res => {
+        console.log('data', res);
+        this.filterSelected.forEach(x => {
+            x.length = res.filter(a => a.trang_thai === x.Name).length;
+        });
+        this.dataSub = res.map(x => {
+
+
+            return {
+                id: x.id,
+                hang_hoa: x.hang_hoa,
+                serial: x.serial,
+                date_baoduong: x.date_baoduong,
+                dateFilter_baoduong: this.dateService.formatDate(x.date_baoduong, 'MM-DD-YYYY'),
+                date_dukien: x.date_dukien,
+                dateFilter_dukien: this.dateService.formatDate(x.date_dukien, 'MM-DD-YYYY'),
+                trang_thai: x.trang_thai,
+                nguoi_sua: x.nguoi_sua,
+                fullText: x.id + '-' + x.serial + '-' + x.hang_hoa
+            }
+        });
+        this.dataSub.reverse();
+        this.data = this.dataSub;
+    }, () => { }, () => { this.loadService.hide(); })
+}
 
 }
