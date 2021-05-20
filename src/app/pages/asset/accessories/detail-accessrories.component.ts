@@ -45,14 +45,14 @@ export class DetailAccessoriesComponent implements OnInit {
 
     ngOnInit(): void {
         this.listCreate = this.conFig.create;
-        this.listCreate[6].data = [
-            { value: 'Mới', Name: 'Mới' },
-            { value: 'Đã xác nhận', Name: 'Đã xác nhận' },
-            { value: 'Đang bảo dưỡng', Name: 'Đang bảo dưỡng' },
-            { value: 'Đang chờ linh kiện', Name: 'Đang chờ linh kiện' },
-            { value: 'Bảo dưỡng xong', Name: 'Bảo dưỡng xong' },
-            { value: 'Bảo dưỡng thất bại', Name: 'Bảo dưỡng thất bại' }
-        ]
+        // this.listCreate[6].data = [
+        //     { value: 'Mới', Name: 'Mới' },
+        //     { value: 'Đã xác nhận', Name: 'Đã xác nhận' },
+        //     { value: 'Đang bảo dưỡng', Name: 'Đang bảo dưỡng' },
+        //     { value: 'Đang chờ linh kiện', Name: 'Đang chờ linh kiện' },
+        //     { value: 'Bảo dưỡng xong', Name: 'Bảo dưỡng xong' },
+        //     { value: 'Bảo dưỡng thất bại', Name: 'Bảo dưỡng thất bại' }
+        // ]
     }
 
     handleCallbackEvent = (data) => {

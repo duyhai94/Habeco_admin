@@ -53,6 +53,7 @@ export class CreateAccessoriesComponent implements OnInit {
             { value: 'Bảo dưỡng xong', Name: 'Bảo dưỡng xong' },
             { value: 'Bảo dưỡng thất bại', Name: 'Bảo dưỡng thất bại' }
         ]
+
     }
 
     handleCallbackEvent = (data) => {

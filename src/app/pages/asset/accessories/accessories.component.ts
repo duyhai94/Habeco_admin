@@ -50,6 +50,7 @@ export class AccessoriesComponent implements OnInit {
     ]
 
 
+
     ngOnInit() {
         this.onLoadData(true);
         this.listlable = this.conFig.collums;
@@ -101,7 +102,7 @@ export class AccessoriesComponent implements OnInit {
                     }
                 });
             }
-        }   
+        }
 
         if (!this.value) {
             if (!filter.length) return this.dataSub = this.data;
@@ -167,7 +168,7 @@ export class AccessoriesComponent implements OnInit {
 
 @NgModule({
     declarations: [
-      AccessoriesComponent
+        AccessoriesComponent
     ],
     imports: [
         CommonModule,

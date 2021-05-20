@@ -27,20 +27,20 @@ export class IoWarehouseModel {
       {
         name: 'Số lượng',
         width: 100,
-        type: 'date',
-        id: 'expected',
+        type: 'number',
+        id: 'id',
       },
       {
         name: 'Đơn vị xử lý',
         width: 300,
-        type: 'text',
-        id: 'repairer',
+        type: 'select',
+        id: '',
       },
       {
         name: 'Người tạo phiếu',
         width: 300,
         type: 'text',
-        id: 'hang_hoa',
+        id: 'nguoi_sua',
       },
       {
         name: '',
@@ -67,14 +67,14 @@ export class IoWarehouseModel {
         class: 'col-6',
       },
       {
-        id: 'nguoi_nhan',
+        id: 'nguoi_sua',
         label: 'Người tạo phiếu',
-        name: 'date_baoduong',
+        name: 'nguoi_sua',
         type: 'text',
         class: 'col-6',
       },
       {
-        id: 'num',
+        id: 'id',
         label: 'Số lượng',
         name: 'date_baoduong',
         type: 'text',
@@ -83,7 +83,7 @@ export class IoWarehouseModel {
       {
         id: 'hang_hoa',
         label: 'Tên hàng hóa',
-        name: 'date_baoduong',
+        name: 'hang_hoa',
         type: 'text',
         class: 'col-6',
       },
