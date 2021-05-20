@@ -57,7 +57,7 @@ export class MaintenanceModel {
                 id: 'serial',
                 label: 'Serial',
                 name: 'serial',
-                type: 'number',
+                type: 'text',
                 class: 'col-6'
             },
             {

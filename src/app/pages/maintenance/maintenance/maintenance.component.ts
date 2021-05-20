@@ -48,8 +48,6 @@ export class MaintenanceComponent implements OnInit {
 
 
     ngOnInit() {
-        console.log(this.data);
-
         this.onLoadData(true);
         this.listlable = this.conFig.collums;
         this.listFilter = this.conFig.filter;
@@ -80,8 +78,6 @@ export class MaintenanceComponent implements OnInit {
                 }
             });
             this.dataSub.reverse();
-            console.log(this.dataSub);
-
             this.data = this.dataSub;
         }, () => { }, () => { this.loadService.hide(); })
     }

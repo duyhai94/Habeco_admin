@@ -43,7 +43,11 @@ export class DetailMaintenanceComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        console.log(this.data);
+
         this.listCreate = this.conFig.create;
+        console.log(this.listCreate);
+
         this.listCreate[6].data = [
             { value: 'Mới', Name: 'Mới' },
             { value: 'Đã xác nhận', Name: 'Đã xác nhận' },
