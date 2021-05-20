@@ -41,7 +41,7 @@
                         <span *ngIf="i.type === 'object'" (click)="handleRouteLink(item)">{{ item[i.id][i.idSub]
                             }}</span>
                         <span *ngIf="i.type === 'date'" (click)="handleRouteLink(item)">
-                            {{ item[i.id] }}
+                            {{ item[i.id] | date: "dd-MM-YYYY" }}
                         </span>
                         <span *ngIf="i.type === 'setting'">
                             <button (click)="onClickSetting(item, 'edit')" class="btn btn-outline-primary">
