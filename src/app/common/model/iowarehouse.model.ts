@@ -11,12 +11,12 @@ export class IoWarehouseModel {
   Date: string;
   public get collums(): Array<CollumsModel> {
     return [
-		{
-			name: 'Tên hàng hóa',
-			width: 200,
-			type: 'text',
-			id: 'name',
-		},
+      {
+        name: 'Tên hàng hóa',
+        width: 200,
+        type: 'text',
+        id: 'hang_hoa',
+      },
 
       {
         name: 'Serial',
@@ -36,11 +36,11 @@ export class IoWarehouseModel {
         type: 'text',
         id: 'repairer',
       },
-	  {
+      {
         name: 'Người tạo phiếu',
         width: 300,
         type: 'text',
-        id: 'repairer',
+        id: 'hang_hoa',
       },
       {
         name: '',
@@ -63,25 +63,25 @@ export class IoWarehouseModel {
         id: 'serial',
         label: 'Serial',
         name: 'serial',
-        type: 'number',
+        type: 'text',
         class: 'col-6',
       },
       {
-        id: 'person',
+        id: 'nguoi_nhan',
         label: 'Người tạo phiếu',
         name: 'date_baoduong',
         type: 'text',
         class: 'col-6',
       },
-	  {
+      {
         id: 'num',
         label: 'Số lượng',
         name: 'date_baoduong',
         type: 'text',
         class: 'col-6',
       },
-	  {
-        id: 'nameProduct',
+      {
+        id: 'hang_hoa',
         label: 'Tên hàng hóa',
         name: 'date_baoduong',
         type: 'text',
