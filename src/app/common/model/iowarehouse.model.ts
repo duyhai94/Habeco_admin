@@ -2,7 +2,7 @@ import { CollumsModel } from './base/collums.model';
 import { CreateModel } from './base/create.model';
 import { FilterModel } from './base/filter.model';
 
-export class SettingStrutureModel {
+export class IoWarehouseModel {
   STT: number;
   Service: string;
   CSKH: string;
@@ -11,6 +11,13 @@ export class SettingStrutureModel {
   Date: string;
   public get collums(): Array<CollumsModel> {
     return [
+		{
+			name: 'Tên hàng hóa',
+			width: 200,
+			type: 'text',
+			id: 'name',
+		},
+
       {
         name: 'Serial',
         width: 200,
@@ -18,19 +25,19 @@ export class SettingStrutureModel {
         id: 'serial',
       },
       {
-        name: 'Ngày bảo dưỡng gần nhất',
-        width: 300,
-        type: 'date',
-        id: 'lastest',
-      },
-      {
-        name: 'Ngày xong dự kiến',
-        width: 300,
+        name: 'Số lượng',
+        width: 100,
         type: 'date',
         id: 'expected',
       },
       {
-        name: 'Người sửa',
+        name: 'Đơn vị xử lý',
+        width: 300,
+        type: 'text',
+        id: 'repairer',
+      },
+	  {
+        name: 'Người tạo phiếu',
         width: 300,
         type: 'text',
         id: 'repairer',
@@ -60,47 +67,25 @@ export class SettingStrutureModel {
         class: 'col-6',
       },
       {
-        id: 'date_baoduong',
-        label: 'Ngày gần nhất bảo dưỡng',
+        id: 'person',
+        label: 'Người tạo phiếu',
         name: 'date_baoduong',
-        type: 'date',
-        class: 'col-6',
-      },
-      {
-        id: 'date_dukien',
-        label: 'Ngày xong dự kiến',
-        name: 'date_dukien',
-        type: 'date',
-        class: 'col-6',
-      },
-      {
-        id: 'nguoi_nhan',
-        label: 'Nhân viên tiếp nhận',
-        name: 'nguoi_nhan',
         type: 'text',
         class: 'col-6',
       },
-      {
-        id: 'nguoi_sua',
-        label: 'Nhân viên bảo dưỡng',
-        name: 'nguoi_sua',
+	  {
+        id: 'num',
+        label: 'Số lượng',
+        name: 'date_baoduong',
         type: 'text',
         class: 'col-6',
       },
-      {
-        id: 'trang_thai',
-        label: 'Trạng thái',
-        name: 'trang_thai',
-        type: 'selected',
-        class: 'col-6',
-        data: [],
-      },
-      {
-        id: 'hang_hoa',
+	  {
+        id: 'nameProduct',
         label: 'Tên hàng hóa',
-        name: 'hang_hoa',
+        name: 'date_baoduong',
         type: 'text',
-        class: 'col-12',
+        class: 'col-6',
       },
     ];
   }
@@ -113,32 +98,12 @@ export class SettingStrutureModel {
       },
       {
         type: 'text',
-        Text: 'ID',
-        data: [],
-      },
-      {
-        type: 'date',
-        Text: 'Ngày tiếp nhận',
-        data: [],
-      },
-      {
-        type: 'date',
-        Text: 'Ngày đến hạn',
+        Text: 'Serial',
         data: [],
       },
       {
         type: 'text',
-        Text: 'Linh kiện',
-        data: [],
-      },
-      {
-        type: 'text',
-        Text: 'Ngươi tạo',
-        data: [],
-      },
-      {
-        type: 'text',
-        Text: 'Ngươi sửa',
+        Text: 'Người tạo phiếu',
         data: [],
       },
       {

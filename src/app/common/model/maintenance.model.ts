@@ -96,13 +96,6 @@ export class MaintenanceModel {
                 class: 'col-6',
                 data: []
             },
-            {
-                id: 'hang_hoa',
-                label: 'Tên hàng hóa',
-                name: 'hang_hoa',
-                type: 'text',
-                class: 'col-12'
-            }
         ];
     }
     public get filter(): Array<FilterModel> {

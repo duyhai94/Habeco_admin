@@ -1,1 +1,43 @@
-<p>home works!</p>
+<div class="home">
+    <app-filter [(listFilter)]="listFilter" (callback)="handleCallback($event)">
+    </app-filter>
+    <br />
+
+    <div class="overview">
+        <div class="card" *ngFor="let item of list">
+            <img [src]="item.icon" alt="icon">
+            <div class="title">{{item.title}}</div>
+            <div class="amount">{{item.amount}}</div>
+        </div>
+    </div>
+    <br>
+
+    <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis" [stroke]="chartOptions.stroke" [colors]="chartOptions.colors" [dataLabels]="chartOptions.dataLabels" [legend]="chartOptions.legend" [markers]="chartOptions.markers"
+        [grid]="chartOptions.grid" [yaxis]="chartOptions.yaxis" [title]="chartOptions.title"></apx-chart>
+    <br>
+    <div class="row">
+        <div class="col-6">
+            <div class="baoduong">
+                <div class="title">
+                    <img src="assets/svg/data_usage.svg" alt=""> Bảo dưỡng</div>
+                <apx-chart [series]="pieChartOptions.series" [chart]="pieChartOptions.chart" [labels]="pieChartOptions.labels" [responsive]="pieChartOptions.responsive"></apx-chart>
+            </div>
+            <div class="baoduong">
+                <div class="title"><img src="assets/svg/data_usage.svg" alt=""> Chiết nạp</div>
+                <apx-chart [series]="pieChartOptions.series" [chart]="pieChartOptions.chart" [labels]="pieChartOptions.labels" [responsive]="pieChartOptions.responsive"></apx-chart>
+            </div>
+        </div>
+        <div class="col-6 noti">
+            <p>Thông báo </p>
+            <p>1321465102 đã bảo dưỡng thành công</p>
+            <p>1321465102 đã bảo dưỡng thành công</p>
+            <p>1321465102 đã bảo dưỡng thành công</p>
+            <p>1321465102 đã bảo dưỡng thành công</p>
+            <p>1321465102 đã bảo dưỡng thành công</p>
+        </div>
+    </div>
+
+
+
+
+</div>

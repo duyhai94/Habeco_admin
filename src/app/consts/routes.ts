@@ -1,14 +1,14 @@
 export enum Routes {
   LOGIN = '/login',
-  HOME = '/pages/home',
-  REPORT = '/pages/report',
-  MAINTENANCE = '/pages/maintenance',
-  SETTING = '/pages/setting',
-  ACCESSORIES = '/pages/asset/accessories',
-  GOODS = '/pages/asset/goods',
-  DEVICE = '/pages/asset/device',
-  SITE = '/pages/maintenance/site',
-  REASON = '/pages/maintenance/reason'
+  HOME = 'home',
+  REPORT = 'report',
+  MAINTENANCE = 'maintenance',
+  SETTING = 'setting',
+  ACCESSORIES = 'asset',
+  GOODS = 'asset/goods',
+  DEVICE = 'asset/device',
+  SITE = 'maintenance/site',
+  REASON = 'maintenance/reason'
 }
 
 export const RoutesLink = [
@@ -19,6 +19,7 @@ export const RoutesLink = [
     subs: [],
   },
   {
+    path: Routes.ACCESSORIES,
     name: 'Xuất nhập kho',
     icon: 'assets/svg/warehouse.png',
     subs: [
@@ -27,6 +28,7 @@ export const RoutesLink = [
     ],
   },
   {
+    path:'chietnap',
     name: 'Chiết nạp',
     icon: 'assets/svg/output.png',
     subs: [
@@ -34,15 +36,16 @@ export const RoutesLink = [
     ],
   },
   {
+    path: Routes.MAINTENANCE,
     name: 'Bảo dưỡng',
     icon: 'assets/svg/global-settings.png',
     subs: [
       { name: 'Nhập bảo dưỡng', path: Routes.MAINTENANCE },
-      { name: 'Chờ bảo dưỡng', path: Routes.SITE },
-      { name: 'Đang bảo duõng', path: Routes.REASON },
-      { name: 'Đang chờ linh kiện', path: Routes.REASON },
-      { name: 'Bảo dưỡng xong', path: Routes.REASON },
-      { name: 'Bảo dưỡng thất bại', path: Routes.REASON }
+      { name: 'Chờ bảo dưỡng', path: Routes.MAINTENANCE },
+      { name: 'Đang bảo duõng', path: Routes.MAINTENANCE },
+      { name: 'Đang chờ linh kiện', path: Routes.MAINTENANCE },
+      { name: 'Bảo dưỡng xong', path: Routes.MAINTENANCE },
+      { name: 'Bảo dưỡng thất bại', path: Routes.MAINTENANCE }
     ],
   },
   {
@@ -52,13 +55,13 @@ export const RoutesLink = [
     subs: [],
   },
   {
-    path: '/pages/setting',
+    path: 'setting/struture',
     name: 'Cài đặt',
     icon: 'assets/svg/setting.svg',
     subs: [
-      { name: 'Cơ cấu công ty', path: '/pages/setting/structure' },
-      { name: 'Nhóm người dùng', path: '/pages/setting/group' },
-      { name: 'Phân quyền người dùng', path: '/pages/setting/permission' }
+      { name: 'Cơ cấu công ty', path: 'setting/structure' },
+      { name: 'Nhóm người dùng', path: 'setting/group' },
+      { name: 'Phân quyền người dùng', path: 'setting/permission' }
     ],
   },
 ];
