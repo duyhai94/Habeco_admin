@@ -48,6 +48,8 @@ export class MaintenanceComponent implements OnInit {
 
 
     ngOnInit() {
+        console.log(this.data);
+
         this.onLoadData(true);
         this.listlable = this.conFig.collums;
         this.listFilter = this.conFig.filter;
@@ -64,8 +66,6 @@ export class MaintenanceComponent implements OnInit {
                 x.length = res.filter(a => a.trang_thai === x.Name).length;
             });
             this.dataSub = res.map(x => {
-
-
                 return {
                     id: x.id,
                     hang_hoa: x.hang_hoa,
@@ -80,6 +80,8 @@ export class MaintenanceComponent implements OnInit {
                 }
             });
             this.dataSub.reverse();
+            console.log(this.dataSub);
+
             this.data = this.dataSub;
         }, () => { }, () => { this.loadService.hide(); })
     }

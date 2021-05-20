@@ -11,18 +11,6 @@ export class MaintenanceModel {
     Date: string;
     public get collums(): Array<CollumsModel> {
         return [
-            // {
-            //     id: 'id',
-            //     name: 'ID',
-            //     width: 100,
-            //     type: 'text'
-            // },
-            // {
-            //     id: 'hang_hoa',
-            //     name: 'Hàng hóa',
-            //     width: 100,
-            //     type: 'text'
-            // },
             {
                 id: 'serial',
                 name: 'Serial',
@@ -41,12 +29,6 @@ export class MaintenanceModel {
                 width: 200,
                 type: 'date',
             },
-            // {
-            //     id: 'trang_thai',
-            //     name: 'Trạng thái',
-            //     width: 200,
-            //     type: 'text',
-            // },
             {
                 id: 'nguoi_sua',
                 name: 'Người bảo dưỡng',
@@ -131,12 +113,6 @@ export class MaintenanceModel {
                 data: [],
                 condition: 'id'
             },
-            // {
-            //     Text: 'ID',
-            //     type: 'text',
-            //     data: [],
-            //     condition: 'id'
-            // },
             {
                 Text: 'Serial',
                 type: 'text',
