@@ -70,12 +70,12 @@ export class MaintenanceComponent implements OnInit {
                     id: x.id,
                     hang_hoa: x.hang_hoa,
                     serial: x.serial,
-                    date_baoduong: x.date_baoduong,
+                    date_baoduong: x.recentMaintenanceDate,
                     dateFilter_baoduong: this.dateService.formatDate(x.date_baoduong, 'MM-DD-YYYY'),
-                    date_dukien: x.date_dukien,
+                    date_dukien: x.estimate,
                     dateFilter_dukien: this.dateService.formatDate(x.date_dukien, 'MM-DD-YYYY'),
                     trang_thai: x.trang_thai,
-                    nguoi_sua: x.nguoi_sua,
+                    nguoi_sua: x.employee,
                     fullText: x.id + '-' + x.serial + '-' + x.hang_hoa
                 }
             });

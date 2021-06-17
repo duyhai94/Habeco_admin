@@ -22,10 +22,7 @@
                     <br />
                     <select class="base-input" (change)="onChangeValueDate($event.target.value, item)">
                         <option value="">Tất cả</option>
-                        <option
-                            *ngFor="let i of item.data"
-                            [value]="i.value"
-                        >
+                        <option *ngFor="let i of item.data" [value]="i.value">
                             {{ i.name }}
                         </option>
                     </select>
@@ -36,7 +33,8 @@
             <div *ngFor="let item of listFilter" class="item-filter">
                 <div class="search-input" *ngIf="item.type === 'search'">
                     <span>{{ item.Text }}</span>
-                    <input type="text" placeholder="Tìm kiếm..." class="base-input-search" (input)="onChangeValueDate($event.target.value, item)" />
+                    <input type="text" placeholder="Tìm kiếm..." class="base-input-search"
+                        (input)="onChangeValueDate($event.target.value, item)" />
                     <img src="assets/svg/icon-search.svg">
                 </div>
             </div>
